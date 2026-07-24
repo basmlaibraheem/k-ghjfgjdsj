@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-cream text-ink font-sans antialiased; }
+  h1, h2, h3 { @apply font-serif; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-medium transition-all duration-300 rounded-full; }
+  .btn-primary { @apply bg-mustard-400 text-ink hover:bg-mustard-500; }
+  .btn-outline { @apply border border-ink/20 text-ink hover:bg-ink hover:text-cream; }
+  .btn-ghost { @apply text-ink hover:bg-ink/5; }
+  .card { @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300; }
+  .input { @apply w-full px-4 py-3 border border-ink/10 rounded-xl bg-white focus:outline-none focus:border-mustard-400 transition-colors; }
+  .label { @apply block text-sm font-medium text-ink/70 mb-1; }
+  .section-title { @apply text-3xl md:text-4xl font-serif text-center text-ink; }
+  .chip { @apply px-3 py-1 rounded-full text-sm font-medium; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FAF8F4; }
+::-webkit-scrollbar-thumb { background: #E5B64D; border-radius: 4px; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg, #f0ece4 25%, #faf8f4 50%, #f0ece4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
